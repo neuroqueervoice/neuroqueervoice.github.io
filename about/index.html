@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — NeuroQueer Voice</title>
+  <meta name="description" content="About NeuroQueer Voice — mission, background, and contact information." />
+  <meta property="og:title" content="About — NeuroQueer Voice" />
+  <meta property="og:description" content="About NeuroQueer Voice — mission, background, and contact information." />
+  <style>
+    :root{--bg:#fff;--fg:#0b0b0b;--muted:#555;--accent:#7b3fe4}
+    [data-theme="dark"]{--bg:#0b0b0f;--fg:#eaeaea;--muted:#bfbfbf;--accent:#9d7cf6}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--fg);background:linear-gradient(180deg,var(--bg),var(--bg));-webkit-font-smoothing:antialiased}
+    a{color:var(--accent)}
+    .container{max-width:880px;margin:48px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8ab3);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{color:var(--muted);margin:8px 0 20px}
+    main{display:grid;grid-template-columns:1fr;gap:20px}
+    section.card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    dl{display:grid;grid-template-columns:120px 1fr;gap:8px 16px;margin:0}
+    dt{color:var(--muted);font-weight:600}
+    dd{margin:0}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{background:rgba(0,0,0,0.06);padding:6px 10px;border-radius:999px;font-size:0.9rem}
+    footer{margin-top:24px;color:var(--muted);font-size:0.9rem}
+    .controls{display:flex;gap:8px;align-items:center}
+    button.icon{background:none;border:1px solid rgba(0,0,0,0.08);padding:8px;border-radius:8px;cursor:pointer}
+    @media(min-width:720px){main{grid-template-columns:1fr 300px}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
+  <div class="container" role="document">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden="true">NQ</div>
+        <div>
+          <h1>NeuroQueer Voice</h1>
+          <p class="lead">Advocacy, resources, and storytelling for queer neurodivergent communities.</p>
+        </div>
+      </div>
+      <div class="controls" aria-hidden="false">
+        <button id="themeToggle" class="icon" aria-pressed="false" title="Toggle color theme">Toggle theme</button>
+        <a href="/" aria-label="Home">Home</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="card" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>Hello — I run NeuroQueer Voice, a space focused on centering queer and neurodivergent lived experiences. This site shares resources, personal writing, and community projects. Replace this paragraph with your personal bio: where you're from, what motivates you, and what visitors should know.</p>
+        <p>Accessibility note: this page uses simple, high-contrast styles and supports a light/dark toggle. Add more semantic structure and landmarks as you expand content.</p>
+      </section>
+
+      <aside class="card" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Contact & Quick Info</h3>
+        <dl>
+          <dt>Location</dt><dd>City, Region (optional)</dd>
+          <dt>Email</dt><dd><a href="mailto:hello@example.org">hello@example.org</a></dd>
+          <dt>Pronouns</dt><dd>they/them</dd>
+          <dt>Topics</dt><dd>
+            <div class="tags">
+              <span class="tag">Neurodiversity</span>
+              <span class="tag">Queer Advocacy</span>
+              <span class="tag">Resources</span>
+            </div>
+          </dd>
+        </dl>
+        <p style="margin-top:12px"><a href="/assets/resume.pdf" download>Download résumé</a> • <a href="/contact">Contact form</a></p>
+        <nav aria-label="Social links">
+          <ul style="padding-left:0;margin:12px 0 0;list-style:none;display:flex;gap:8px">
+            <li><a href="https://twitter.com/" rel="noopener">Twitter</a></li>
+            <li><a href="https://instagram.com/" rel="noopener">Instagram</a></li>
+            <li><a href="https://github.com/neuroqueervoice" rel="noopener">GitHub</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="card" aria-labelledby="work-heading">
+        <h3 id="work-heading">Work & Projects</h3>
+        <p>Highlight a few projects, posts, or community efforts here. Example:</p>
+        <ul>
+          <li><a href="/projects/">Community Resource Guide</a> — Curated tools and lived-experience writing.</li>
+          <li><a href="/writing/">Personal essays</a> — Stories about identity, accessibility, and organizing.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="support-heading">
+        <h3 id="support-heading">Support this work</h3>
+        <p>If you want to support ongoing work, add links to donation pages, Ko-fi, Patreon, or volunteer opportunities here.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> NeuroQueer Voice. Built with care. <a href="/privacy">Privacy</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Small theme toggle using data-theme on <html>
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const key = 'nq-theme';
+      function apply(theme){
+        if(theme==='dark') root.setAttribute('data-theme','dark');
+        else root.removeAttribute('data-theme');
+        btn.setAttribute('aria-pressed', theme==='dark');
+      }
+      const saved = localStorage.getItem(key) || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      apply(saved);
+      btn.addEventListener('click', ()=>{
+        const next = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+        localStorage.setItem(key,next);
+        apply(next);
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
